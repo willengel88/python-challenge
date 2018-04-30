@@ -7,7 +7,7 @@ csv_data= os.path.join("budget_data_1.csv")
 
 with open(csv_data, newline="") as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
-
+    
     # Skip the first row of the csv
     next(csv_reader, None)
 
@@ -23,7 +23,8 @@ with open(csv_data, newline="") as csvfile:
           Date.append(row[0])
           # putting row of revenue in epty list called Revenue
           Revenue.append(int(row[1]))
-
+    #print(Date)
+    #print(Revenue)
     print("Financial Analysis")
     print("------------------------------------")
     print("Total Months: " + str(len(Date)))
@@ -34,6 +35,7 @@ with open(csv_data, newline="") as csvfile:
     for i in range(1, len(Revenue)):
         change_rev= Revenue[i]-Revenue[i-1]
         increase_revenue.append(change_rev)
+    print(increase_revenue)
         
     
     # using max and min function to find the index of max and min change in the diff in revenue  
